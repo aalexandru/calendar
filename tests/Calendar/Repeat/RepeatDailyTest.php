@@ -3,18 +3,17 @@
  * Author: Andrei ALEXANDRU <contact@andreialexandru.com>
  */
 
-namespace Calendar\Event;
+namespace Calendar\Repeat;
 
-use Calendar\Calendar;
+use Calendar\Event\BasicEvent;
 
-class BasicEventTest extends \PHPUnit_Framework_TestCase
+class RepeatDailyTest extends \PHPUnit_Framework_TestCase
 {
-    public function testCreateRecurringEvent()
+    public function testBasic()
     {
         $event = new BasicEvent('My Event', 'Testing the new calendar', new \DateTime('now'), new \DateTime('tomorrow'));
         $event->repeats()->daily()->every(2)->endsOn(new \DateTime('2015-12-31'));
 
-        $calendar = new Calendar('test');
-        $calendar->add($event);
+        $this->assertEquals('Every 2 days, until Dec 31, 2015', $event->getRepeat()->getSummary());
     }
 }

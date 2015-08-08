@@ -21,6 +21,19 @@ class Day
     private $day;
 
     /**
+     * @var array
+     */
+    private $map = [
+        self::Sunday => 'Sunday',
+        self::Monday => 'Monday',
+        self::Tuesday => 'Tuesday',
+        self::Wednesday => 'Wednesday',
+        self::Thursday => 'Thursday',
+        self::Friday => 'Friday',
+        self::Saturday => 'Saturday',
+    ];
+
+    /**
      * Day constructor.
      *
      * @param int $day
@@ -28,5 +41,13 @@ class Day
     public function __construct($day)
     {
         $this->day = $day;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->map[$this->day];
     }
 }

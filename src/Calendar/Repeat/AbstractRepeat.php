@@ -53,6 +53,7 @@ abstract class AbstractRepeat
     public function __construct(AbstractEvent $event)
     {
         $this->event = $event;
+        $this->start = $event->getFrom();
     }
 
     /**
