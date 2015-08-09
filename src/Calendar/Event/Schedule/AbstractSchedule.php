@@ -69,7 +69,7 @@ abstract class AbstractSchedule
     {
         $this->to = new Forever($this);
 
-        $this->event->setRepeat($this);
+        $this->event->setSchedule($this);
     }
 
     /**
@@ -82,7 +82,7 @@ abstract class AbstractSchedule
 
         $this->summary .= ", {$occurrences} times";
 
-        $this->event->setRepeat($this);
+        $this->event->setSchedule($this);
     }
 
     /**
@@ -95,7 +95,7 @@ abstract class AbstractSchedule
 
         $this->summary .= ", until {$date->format('M j, Y')}";
 
-        $this->event->setRepeat($this);
+        $this->event->setSchedule($this);
     }
 
     /**

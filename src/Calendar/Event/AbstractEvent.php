@@ -40,7 +40,7 @@ abstract class AbstractEvent
     /**
      * @var AbstractSchedule
      */
-    protected $repeat;
+    protected $schedule;
 
     /**
      * @var Tag[]
@@ -72,19 +72,19 @@ abstract class AbstractEvent
     }
 
     /**
-     * @param AbstractSchedule $repeat
+     * @param AbstractSchedule $schedule
      */
-    public function setRepeat($repeat)
+    public function setSchedule($schedule)
     {
-        $this->repeat = $repeat;
+        $this->schedule = $schedule;
     }
 
     /**
      * @return AbstractSchedule
      */
-    public function getRepeat()
+    public function getSchedule()
     {
-        return $this->repeat;
+        return $this->schedule;
     }
 
     /**
@@ -140,6 +140,6 @@ abstract class AbstractEvent
      */
     public function isRecurring()
     {
-        return isset($this->repeat);
+        return isset($this->schedule);
     }
 }

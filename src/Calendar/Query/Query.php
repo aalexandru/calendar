@@ -51,7 +51,7 @@ class Query
             return $event->getFrom() >= $start
                 && $event->getTo() <= $end
                 || $event->isRecurring()
-                && $event->getRepeat()->nextOccurrence($start) <= $end;
+                && $event->getSchedule()->nextOccurrence($start) <= $end;
         });
     }
 }
