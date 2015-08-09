@@ -3,11 +3,16 @@
  * Author: Andrei ALEXANDRU <contact@andreialexandru.com>
  */
 
-namespace Calendar\Repeat\End;
+namespace Calendar\Event\Schedule\Endpoint;
 
 use DateTime;
 
-class Never extends AbstractEnd
+/**
+ * Class Forever
+ *
+ * @package Calendar\Event\Schedule\Endpoint
+ */
+class Forever extends AbstractEndpoint
 {
     /**
      * @param DateTime $date
@@ -15,6 +20,6 @@ class Never extends AbstractEnd
      */
     public function includes(DateTime $date)
     {
-        return false;
+        return $this->repeat->getFrom() <= $date;
     }
 }

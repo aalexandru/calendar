@@ -3,12 +3,17 @@
  * Author: Andrei ALEXANDRU <contact@andreialexandru.com>
  */
 
-namespace Calendar\Repeat;
+namespace Calendar\Event\Schedule;
 
 use Calendar\Event\AbstractEvent;
 use DateInterval;
 
-class RepeatMonthly extends AbstractRepeat
+/**
+ * Class MonthlySchedule
+ *
+ * @package Calendar\Event\Schedule
+ */
+class MonthlySchedule extends AbstractSchedule
 {
     /**
      * AbstractRepeat constructor.

@@ -5,8 +5,8 @@
 
 namespace Calendar\Event;
 
-use Calendar\Repeat\AbstractRepeat;
-use Calendar\Repeat\Builder\RepeatBuilder;
+use Calendar\Event\Schedule\AbstractSchedule;
+use Calendar\Event\Schedule\Builder\ScheduleBuilder;
 use Calendar\Tag\Tag;
 use DateTime;
 
@@ -38,7 +38,7 @@ abstract class AbstractEvent
     protected $to;
 
     /**
-     * @var AbstractRepeat
+     * @var AbstractSchedule
      */
     protected $repeat;
 
@@ -64,15 +64,15 @@ abstract class AbstractEvent
     }
 
     /**
-     * @return RepeatBuilder
+     * @return ScheduleBuilder
      */
     public function repeats()
     {
-        return new RepeatBuilder($this);
+        return new ScheduleBuilder($this);
     }
 
     /**
-     * @param AbstractRepeat $repeat
+     * @param AbstractSchedule $repeat
      */
     public function setRepeat($repeat)
     {
@@ -80,7 +80,7 @@ abstract class AbstractEvent
     }
 
     /**
-     * @return AbstractRepeat
+     * @return AbstractSchedule
      */
     public function getRepeat()
     {
@@ -125,5 +125,21 @@ abstract class AbstractEvent
     public function getTags()
     {
         return $this->tags;
+    }
+
+    /**
+     * @return string
+     */
+    public function __toString()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isRecurring()
+    {
+        return isset($this->repeat);
     }
 }

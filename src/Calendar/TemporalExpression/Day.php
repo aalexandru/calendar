@@ -5,6 +5,11 @@
 
 namespace Calendar\TemporalExpression;
 
+/**
+ * Class Day
+ *
+ * @package Calendar\TemporalExpression
+ */
 class Day
 {
     const Sunday = 0;

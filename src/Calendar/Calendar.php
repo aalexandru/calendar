@@ -42,4 +42,20 @@ class Calendar
     {
         $this->events[] = $event;
     }
+
+    /**
+     * @return Event\AbstractEvent[]
+     */
+    public function getEvents()
+    {
+        return $this->events;
+    }
+
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
 }

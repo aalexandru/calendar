@@ -3,20 +3,18 @@
  * Author: Andrei ALEXANDRU <contact@andreialexandru.com>
  */
 
-namespace Calendar\Repeat;
+namespace Calendar\Event\Schedule;
 
 use Calendar\Event\AbstractEvent;
-use Calendar\Repeat\End\AbstractEnd;
 use Calendar\TemporalExpression\Day;
 use DateInterval;
-use DateTime;
 
 /**
  * Class RepeatWeekly
  *
- * @package Calendar\Repeat
+ * @package Calendar\Event\Schedule
  */
-class RepeatWeekly extends AbstractRepeat
+class WeeklySchedule extends AbstractSchedule
 {
     /**
      * @var Day[]
@@ -34,7 +32,7 @@ class RepeatWeekly extends AbstractRepeat
 
         $this->interval = DateInterval::createFromDateString('1 week');
 
-        $this->days = [new Day($this->start->format('w'))];
+        $this->days = [new Day($this->from->format('w'))];
 
         $this->summary = 'Weekly';
 

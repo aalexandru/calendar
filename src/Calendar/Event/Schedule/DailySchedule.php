@@ -3,12 +3,17 @@
  * Author: Andrei ALEXANDRU <contact@andreialexandru.com>
  */
 
-namespace Calendar\Repeat;
+namespace Calendar\Event\Schedule;
 
 use Calendar\Event\AbstractEvent;
 use DateInterval;
 
-class RepeatYearly extends AbstractRepeat
+/**
+ * Class DailySchedule
+ *
+ * @package Calendar\Event\Schedule
+ */
+class DailySchedule extends AbstractSchedule
 {
     /**
      * AbstractRepeat constructor.
@@ -19,9 +24,9 @@ class RepeatYearly extends AbstractRepeat
     {
         parent::__construct($event);
 
-        $this->interval = DateInterval::createFromDateString('1 year');
+        $this->interval = DateInterval::createFromDateString('1 day');
 
-        $this->summary = 'Yearly';
+        $this->summary = 'Daily';
     }
 
     /**
@@ -34,9 +39,9 @@ class RepeatYearly extends AbstractRepeat
             return $this;
         }
 
-        $this->interval = DateInterval::createFromDateString("{$amount} years");
+        $this->interval = DateInterval::createFromDateString("{$amount} days");
 
-        $this->summary = "Every {$amount} years";
+        $this->summary = "Every {$amount} days";
 
         return $this;
     }

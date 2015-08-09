@@ -3,12 +3,12 @@
  * Author: Andrei ALEXANDRU <contact@andreialexandru.com>
  */
 
-namespace Calendar\Tag;
+namespace Calendar\Event\Tag;
 
 /**
  * Class Tag
  *
- * @package Calendar\Tag
+ * @package Calendar\Event\Tag
  */
 class Tag
 {
