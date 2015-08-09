@@ -4,3 +4,5 @@ php:
   - 5.6
   - 7.0
   - hhvm
+
+script: phpunit --configuration tests/phpunit.xml --coverage-text tests/Calendar
