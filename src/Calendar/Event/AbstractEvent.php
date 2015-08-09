@@ -7,7 +7,7 @@ namespace Calendar\Event;
 
 use Calendar\Event\Schedule\AbstractSchedule;
 use Calendar\Event\Schedule\Builder\ScheduleBuilder;
-use Calendar\Tag\Tag;
+use Calendar\Event\Tag\Tag;
 use DateTime;
 
 /**
@@ -120,7 +120,7 @@ abstract class AbstractEvent
     }
 
     /**
-     * @return \Calendar\Tag\Tag[]
+     * @return Tag[]
      */
     public function getTags()
     {

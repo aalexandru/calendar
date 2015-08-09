@@ -6,7 +6,6 @@
 namespace Calendar;
 
 use Calendar\Event\AbstractEvent;
-use Calendar\TemporalExpression\Day;
 
 /**
  * Class Calendar
@@ -44,7 +43,7 @@ class Calendar
     }
 
     /**
-     * @return Event\AbstractEvent[]
+     * @return AbstractEvent[]
      */
     public function getEvents()
     {
