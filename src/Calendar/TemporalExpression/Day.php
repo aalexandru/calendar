@@ -12,13 +12,13 @@ namespace Calendar\TemporalExpression;
  */
 class Day
 {
-    const Sunday = 0;
-    const Monday = 1;
-    const Tuesday = 2;
-    const Wednesday = 3;
-    const Thursday = 4;
-    const Friday = 5;
-    const Saturday = 6;
+    const SUNDAY = 0;
+    const MONDAY = 1;
+    const TUESDAY = 2;
+    const WEDNESDAY = 3;
+    const THURSDAY = 4;
+    const FRIDAY = 5;
+    const SATURDAY = 6;
 
     /**
      * @var int
@@ -29,13 +29,13 @@ class Day
      * @var array
      */
     private $map = [
-        self::Sunday => 'Sunday',
-        self::Monday => 'Monday',
-        self::Tuesday => 'Tuesday',
-        self::Wednesday => 'Wednesday',
-        self::Thursday => 'Thursday',
-        self::Friday => 'Friday',
-        self::Saturday => 'Saturday',
+        self::SUNDAY => 'Sunday',
+        self::MONDAY => 'Monday',
+        self::TUESDAY => 'Tuesday',
+        self::WEDNESDAY => 'Wednesday',
+        self::THURSDAY => 'Thursday',
+        self::FRIDAY => 'Friday',
+        self::SATURDAY => 'Saturday',
     ];
 
     /**
@@ -46,11 +46,13 @@ class Day
      */
     public function __construct($day)
     {
-        if (!defined("self::$day")) {
+        $constant = strtoupper($day);
+
+        if (!defined("self::$constant")) {
             throw new \Exception(sprintf('Invalid day given "%s"', $day));
         }
 
-        $this->day = constant("self::$day");
+        $this->day = constant("self::$constant");
     }
 
     /**

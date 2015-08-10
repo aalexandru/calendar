@@ -113,7 +113,7 @@ class WeeklySchedule extends AbstractSchedule
      */
     private function addOnSummary()
     {
-        if (($on = strpos($this->summary, ', on')) != false) {
+        if (($on = strpos($this->summary, ', on')) !== false) {
             $this->summary = substr($this->summary, 0, $on);
         }
 
