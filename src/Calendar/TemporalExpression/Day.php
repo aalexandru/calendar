@@ -41,17 +41,30 @@ class Day
     /**
      * Day constructor.
      *
-     * @param int $day
+     * @param string $day
+     * @throws \Exception
      */
     public function __construct($day)
     {
-        $this->day = $day;
+        if (!defined("self::$day")) {
+            throw new \Exception(sprintf('Invalid day given "%s"', $day));
+        }
+
+        $this->day = constant("self::$day");
+    }
+
+    /**
+     * @return int
+     */
+    public function getDay()
+    {
+        return $this->day;
     }
 
     /**
      * @return string
      */
-    public function getName()
+    public function __toString()
     {
         return $this->map[$this->day];
     }

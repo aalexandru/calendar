@@ -148,7 +148,7 @@ abstract class AbstractSchedule
 
     /**
      * @param DateTime $date
-     * @return DateTime|false
+     * @return bool|DateTime
      */
     public function nextOccurrence(DateTime $date)
     {
@@ -157,7 +157,7 @@ abstract class AbstractSchedule
         }
 
         $current = clone $this->from;
-        while ($current->add($this->getInterval()) <= $date);
+        while ($current->add($this->interval) <= $date);
 
         if ($this->to->includes($current)) {
             return $current;
